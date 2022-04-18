@@ -1,0 +1,50 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <section>
+    <div id="team-section" class="pad-sec">
+    <div class="container">
+{#
+
+      <div class="team-members">
+         <div class="row"> {# ряд который будет на след строку выводить #}
+            {% for post in object_list %}
+              <!-- member-team -->
+                <a href="{% url 'post-detail' post.pk %}">
+                  <div class="col-sm-4">
+                    <div class="member-team animated out" data-animation="fadeInLeft" data-delay="0">
+                      <img src="{{ post.image.url }}" alt="">
+                        <br><br><br>
+                      <div class="magnifier">
+                        <div class="magnifier-inner">
+                          <h3>{{ post.author }}</h3> {# в таких скобках обращаемся к базе данных #}
+                          <p>{{ post.title }}</p>
+                          <p>{{ post.content }}</p>
+                          <ul class="social-icons">
+
+                            <li><a data-rel="tooltip" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="Facebook" href="#" data-original-title="" title=""><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a data-rel="tooltip" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="Twitter" href="#" data-original-title="" title=""><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a data-rel="tooltip" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="Google Plus" href="#" data-original-title="" title=""><i class="fa fa-google-plus"></i></a></li>
+
+                            <li><a data-rel="tooltip" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="Skype" href="#" data-original-title="" title=""><i class="fa fa-skype"></i></a></li>
+
+                          </ul>
+                        </div> <!-- End magnifier-inner -->
+                      </div> <!-- End magnifier -->
+                    </div> <!-- End member-team -->
+                  </div> <!-- End col-sm-4 -->
+                </a>
+
+
+             {% endfor %}
+
+
+
+            </div>
+          </div> <!-- End team-members -->
+        </div> <!-- End container -->
+      </div> <!-- End team-section -->
+    </section>
+{% endblock %}

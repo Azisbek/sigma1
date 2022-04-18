@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+
+
+    <!-- Featured blog post-->
+    <div class="card mb-4">
+        <a href="#!"><img class="card-img-top" src="{{ post.image.url }}" alt="..." /></a>
+        <div class="card-body">
+
+            <div class="small text-muted">
+                <img class="rounded-circle article" src="{{ object.author.profile.image.url }}" height="50" width="50" alt="">
+                {{ object.post_date|date:"F d, Y "}}
+                <div class="small text-muted mx-3">{{ post.author.username }}</div>
+                <div class="mt-2">
+                     <a href="{%  url 'post-update'  post.pk %}">
+                        <p><button>Update</button></p>
+                     </a>
+
+                        </form>
+                </div>
+            </div>
+
+            <h2 class="card-title">{{ object.title}}</h2>
+            <p class="card-text">{{ object.content }}</p>
+
+
+        </div>
+    </div>
+
+{% endblock %}
